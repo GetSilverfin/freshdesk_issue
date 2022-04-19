@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FreshdeskIssue</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <ul>
+      <li><%= link_to "Home", action: :home %></li>
+      <li><%= link_to "One", action: :one %></li>
+      <li><%= link_to "Two", action: :two %></li>
+      <li><%= link_to "Three", action: :three %></li>
+      <li><%= link_to "Four", action: :four %></li>
+      <li><%= link_to "Five", action: :five %></li>
+    </ul>
+    <%= yield %>
+
+    <%= render "freshdesk_widget" %>
+  </body>
+</html>
