@@ -1,9 +1,22 @@
 <script>
-	window.fwSettings={
-	'widget_id':101000001762
-	};
-	!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
+  document.addEventListener('turbolinks:load', function() {
+    window.fwSettings = {
+      widget_id: 101000001762
+    };
+    !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
 
-  FreshworksWidget("hide", "launcher")
+    let script = document.createElement('script');
+    script.type = "text/javascript";
+    script.id = "help-widget";
+    script.src = "https://euc-widget.freshworks.com/widgets/101000001762.js";
+    document.head.appendChild(script);
+
+    window.FreshworksWidget("hide", "launcher")
+  });
+
+  document.addEventListener("turbolinks:before-cache", function() {
+    document.querySelector("script[id='help-widget']").remove();
+    FreshworksWidget("destroy");
+    delete window.FreshworksWidget;
+  });
 </script>
-<script type='text/javascript' src='https://euc-widget.freshworks.com/widgets/101000001762.js' async defer></script>

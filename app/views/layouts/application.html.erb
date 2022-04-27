@@ -8,6 +8,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= render "freshdesk_widget" %>
   </head>
 
   <body>
@@ -20,7 +22,5 @@
       <li><%= link_to "Five", action: :five %></li>
     </ul>
     <%= yield %>
-
-    <%= render "freshdesk_widget" %>
   </body>
 </html>
