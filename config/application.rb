@@ -29,5 +29,8 @@ module FreshdeskIssue
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.hosts << "live.silverfin.localhost"
+    config.hosts << "live.getsilverfin.com"
   end
 end
