@@ -17,7 +17,7 @@
     let script = document.createElement('script');
     script.type = 'text/javascript';
     script.id = 'help-widget';
-    script.src = 'https://euc-widget.freshworks.com/widgets/101000001762.js';
+    script.src = 'https://euc-widget.freshworks.com/no-response-expected.js';
     document.head.appendChild(script);
 
     FreshworksWidget('hide', 'launcher');
@@ -30,6 +30,8 @@
 
     if (placeholderFunction === window.FreshworksWidget) {
       navigationTimeout = setTimeout(function() {
+        console.log("Look what happens if the script doesn't work")
+
         return function() {
           Turbolinks.visit(e.data.url);
         }
